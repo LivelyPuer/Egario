@@ -4,7 +4,7 @@ import model.brick.Brick;
 import model.brick.OrdinaryBrick;
 import model.enemy.Enemy;
 import model.hero.Fireball;
-import model.hero.Mario;
+import model.hero.Egario;
 import model.prize.BoostItem;
 import model.prize.Coin;
 import model.prize.Prize;
@@ -17,7 +17,7 @@ import java.util.Iterator;
 public class Map {
 
     private double remainingTime;
-    private Mario mario;
+    private Egario mario;
     private ArrayList<Brick> bricks = new ArrayList<>();
     private ArrayList<Enemy> enemies = new ArrayList<>();
     private ArrayList<Brick> groundBricks = new ArrayList<>();
@@ -36,11 +36,11 @@ public class Map {
     }
 
 
-    public Mario getMario() {
+    public Egario getMario() {
         return mario;
     }
 
-    public void setMario(Mario mario) {
+    public void setMario(Egario mario) {
         this.mario = mario;
     }
 

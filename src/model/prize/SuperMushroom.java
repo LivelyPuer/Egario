@@ -1,8 +1,8 @@
 package model.prize;
 
 import manager.GameEngine;
-import model.hero.Mario;
-import model.hero.MarioForm;
+import model.hero.Egario;
+import model.hero.EgarioForm;
 import view.Animation;
 import view.ImageLoader;
 
@@ -16,17 +16,17 @@ public class SuperMushroom extends BoostItem{
     }
 
     @Override
-    public void onTouch(Mario mario, GameEngine engine) {
+    public void onTouch(Egario mario, GameEngine engine) {
         mario.acquirePoints(getPoint());
 
         ImageLoader imageLoader = new ImageLoader();
 
         if(!mario.getMarioForm().isSuper()){
-            BufferedImage[] leftFrames = imageLoader.getLeftFrames(MarioForm.SUPER);
-            BufferedImage[] rightFrames = imageLoader.getRightFrames(MarioForm.SUPER);
+            BufferedImage[] leftFrames = imageLoader.getLeftFrames(EgarioForm.SUPER);
+            BufferedImage[] rightFrames = imageLoader.getRightFrames(EgarioForm.SUPER);
 
             Animation animation = new Animation(leftFrames, rightFrames);
-            MarioForm newForm = new MarioForm(animation, true, false);
+            EgarioForm newForm = new EgarioForm(animation, true, false);
             mario.setMarioForm(newForm);
             mario.setDimension(48, 96);
 

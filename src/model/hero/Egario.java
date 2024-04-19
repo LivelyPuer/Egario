@@ -9,16 +9,16 @@ import view.ImageLoader;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Mario extends GameObject{
+public class Egario extends GameObject{
 
     private int remainingLives;
     private int coins;
     private int points;
     private double invincibilityTimer;
-    private MarioForm marioForm;
+    private EgarioForm marioForm;
     private boolean toRight = true;
 
-    public Mario(double x, double y){
+    public Egario(double x, double y){
         super(x, y, null);
         setDimension(48,48);
 
@@ -28,11 +28,11 @@ public class Mario extends GameObject{
         invincibilityTimer = 0;
 
         ImageLoader imageLoader = new ImageLoader();
-        BufferedImage[] leftFrames = imageLoader.getLeftFrames(MarioForm.SMALL);
-        BufferedImage[] rightFrames = imageLoader.getRightFrames(MarioForm.SMALL);
+        BufferedImage[] leftFrames = imageLoader.getLeftFrames(EgarioForm.SMALL);
+        BufferedImage[] rightFrames = imageLoader.getRightFrames(EgarioForm.SMALL);
 
         Animation animation = new Animation(leftFrames, rightFrames);
-        marioForm = new MarioForm(animation, false, false);
+        marioForm = new EgarioForm(animation, false, false);
         setStyle(marioForm.getCurrentStyle(toRight, false, false));
     }
 
@@ -114,11 +114,11 @@ public class Mario extends GameObject{
         return coins;
     }
 
-    public MarioForm getMarioForm() {
+    public EgarioForm getMarioForm() {
         return marioForm;
     }
 
-    public void setMarioForm(MarioForm marioForm) {
+    public void setMarioForm(EgarioForm marioForm) {
         this.marioForm = marioForm;
     }
 

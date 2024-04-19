@@ -1,6 +1,6 @@
 package manager;
 
-import model.hero.Mario;
+import model.hero.Egario;
 import view.ImageLoader;
 import view.StartScreenSelection;
 import view.UIManager;
@@ -151,7 +151,7 @@ public class GameEngine implements Runnable {
     }
 
     private void updateCamera() {
-        Mario mario = mapManager.getMario();
+        Egario mario = mapManager.getMario();
         double marioVelocityX = mario.getVelX();
         double shiftAmount = 0;
 
@@ -196,7 +196,7 @@ public class GameEngine implements Runnable {
                 changeSelectedMap(false);
             }
         } else if (gameStatus == GameStatus.RUNNING) {
-            Mario mario = mapManager.getMario();
+            Egario mario = mapManager.getMario();
             if (input == ButtonAction.JUMP) {
                 mario.jump(this);
             } else if (input == ButtonAction.M_RIGHT) {

@@ -1,9 +1,8 @@
 package model.prize;
 
 import manager.GameEngine;
-import manager.MapManager;
 import model.GameObject;
-import model.hero.Mario;
+import model.hero.Egario;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -18,7 +17,7 @@ public abstract class BoostItem extends GameObject implements Prize{
         setDimension(48, 48);
     }
 
-    public abstract void onTouch(Mario mario, GameEngine engine);
+    public abstract void onTouch(Egario mario, GameEngine engine);
 
     @Override
     public int getPoint() {

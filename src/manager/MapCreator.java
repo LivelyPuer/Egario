@@ -8,7 +8,7 @@ import model.Map;
 import model.enemy.Enemy;
 import model.enemy.Goomba;
 import model.enemy.KoopaTroopa;
-import model.hero.Mario;
+import model.hero.Egario;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -103,7 +103,7 @@ class MapCreator {
                     createdMap.addEnemy(enemy);
                 }
                 else if (currentPixel == mario) {
-                    Mario marioObject = new Mario(xLocation, yLocation);
+                    Egario marioObject = new Egario(xLocation, yLocation);
                     createdMap.setMario(marioObject);
                 }
                 else if(currentPixel == end){

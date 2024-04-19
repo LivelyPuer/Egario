@@ -6,7 +6,7 @@ import model.brick.Brick;
 import model.brick.OrdinaryBrick;
 import model.enemy.Enemy;
 import model.hero.Fireball;
-import model.hero.Mario;
+import model.hero.Egario;
 import model.prize.BoostItem;
 import model.prize.Coin;
 import model.prize.Prize;
@@ -29,7 +29,7 @@ public class MapManager {
     }
 
     public void resetCurrentMap(GameEngine engine) {
-        Mario mario = getMario();
+        Egario mario = getMario();
         mario.resetLocation();
         engine.resetCamera();
         createMap(engine.getImageLoader(), map.getPath());
@@ -47,7 +47,7 @@ public class MapManager {
         map.getMario().acquirePoints(point);
     }
 
-    public Mario getMario() {
+    public Egario getMario() {
         return map.getMario();
     }
 
@@ -108,7 +108,7 @@ public class MapManager {
     }
 
     private void checkBottomCollisions(GameEngine engine) {
-        Mario mario = getMario();
+        Egario mario = getMario();
         ArrayList<Brick> bricks = map.getAllBricks();
         ArrayList<Enemy> enemies = map.getEnemies();
         ArrayList<GameObject> toBeRemoved = new ArrayList<>();
@@ -147,7 +147,7 @@ public class MapManager {
     }
 
     private void checkTopCollisions(GameEngine engine) {
-        Mario mario = getMario();
+        Egario mario = getMario();
         ArrayList<Brick> bricks = map.getAllBricks();
 
         Rectangle marioTopBounds = mario.getTopBounds();
@@ -164,7 +164,7 @@ public class MapManager {
     }
 
     private void checkMarioHorizontalCollision(GameEngine engine){
-        Mario mario = getMario();
+        Egario mario = getMario();
         ArrayList<Brick> bricks = map.getAllBricks();
         ArrayList<Enemy> enemies = map.getEnemies();
         ArrayList<GameObject> toBeRemoved = new ArrayList<>();
